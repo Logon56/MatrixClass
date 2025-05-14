@@ -22,7 +22,7 @@ Matrix(const pair<int, int> size, const T value = T()); // size.first - стро
 </details>
 
 <details>
-<summary>**Пример**</summary>
+<summary><strong>Пример</strong></summary>
     
 ```cpp
 #include "Matrix.h"
