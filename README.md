@@ -7,13 +7,31 @@
 Чтобы начать работу с матрицами, необходимо скачать файл Matrix.h и в `#include` указать полный или относительный путь до файла. Наприме, допустип есть папка *MyProject*, в ней содержится папка *Matrix*, тогда подключение матриц будет выглядеть так: `#include "Myproject\Matrix\Matrix.h"`.
 ### Создание объекта
 Для создание объекта, в классе объявлены и определенны несколько конструкторов:
-<details><summary>Конструкторы</summary>
+<details>
+<summary>Конструкторы</summary>
+
+<details>
+<summary>Конструктор по умолчанию</summary>
+
+```cpp
+template<typename T>
+Matrix<T>::Matrix() : rows_(0), columns_(0), data_(nullptr) {}
 ```
-Matrix() //Конструктор по умолчанию
-Matrix(int rows, int columns, const T value = T()); //rwos и columns - количество строк и столбцов, value - значение заполнене матрицы при создании объекта (не обязательно)
-Matrix(const Matrix<T> &mat); //Конструктор копирования
-Matrix(const pair<int, int> size, const T value = T());//size - переменная типа int, где first - количество строк, second - столбцов
+</details>
+
+<details>
+<summary>Конструктор с параметрами</summary>
+
+```cpp
+template<typename T>
+Matrix<T>::Matrix(int rows, int columns, const T value) 
+    : rows_(rows), columns_(columns) 
+{
+    data_ = new T[rows * columns];
+    std::fill(data_, data_ + rows * columns, value);
+}
 ```
+</details>
 </details>
 **Пример**
 ```
