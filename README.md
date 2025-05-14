@@ -50,12 +50,12 @@ T &operator()(int row, int column) //Перегрузка оператора ()
 using namespace std;
 int main()
 {
-    int rows = 3;
-    int columns = 3;
+    int rows = 3; // Количество строк
+    int columns = 3; // Количество столбцов
     Matrix<int> mat1(rows, columns);
-    for (int i = 0; i < rows; i++)
+    for (int i = 0; i < rows; i++) //Проход по строкам
     {
-        for (int j = 0; j < columns; j++)
+        for (int j = 0; j < columns; j++) //Проход по столбцам
         {
             cin >> mat1(i, j);
         }
@@ -83,8 +83,8 @@ int main()
 <details>
 <summary>Вывод матрицы</summary>
     
-1 2 3
-4 5 6
+1 2 3<br>
+4 5 6<br>
 7 8 9
 
 </details>
