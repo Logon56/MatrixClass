@@ -10,28 +10,15 @@
 <details>
 <summary>Конструкторы</summary>
 
-<details>
-<summary>Конструктор по умолчанию</summary>
-
 ```cpp
-template<typename T>
-Matrix<T>::Matrix() : rows_(0), columns_(0), data_(nullptr) {}
-```
-</details>
+Matrix() // Конструктор по умолчанию
 
-<details>
-<summary>Конструктор с параметрами</summary>
+Matrix(int rows, int columns, const T value = T()); // rows и columns - количество строк и столбцов, value - значение заполнения матрицы
 
-```cpp
-template<typename T>
-Matrix<T>::Matrix(int rows, int columns, const T value) 
-    : rows_(rows), columns_(columns) 
-{
-    data_ = new T[rows * columns];
-    std::fill(data_, data_ + rows * columns, value);
-}
+Matrix(const Matrix<T> &mat); // Конструктор копирования
+
+Matrix(const pair<int, int> size, const T value = T()); // size.first - строки, size.second - столбцы
 ```
-</details>
 </details>
 **Пример**
 ```
