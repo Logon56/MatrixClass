@@ -20,8 +20,10 @@ Matrix(const Matrix<T> &mat); // Конструктор копирования
 Matrix(const pair<int, int> size, const T value = T()); // size.first - строки, size.second - столбцы
 ```
 </details>
+
 **Пример**
-```
+<details>
+```cpp
 #include "Matrix.h"
 int main()
 {
@@ -31,7 +33,9 @@ int main()
     Matrix<int> mat4(pair<int, int>(3, 3), 4);
     return 0;
 }
+</details>
 ```
+
 ### Доступ к элементам
 Для доступа к элементам в класса Matrix перегружен оператор `()`:
 ```
