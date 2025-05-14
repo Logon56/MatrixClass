@@ -7,8 +7,6 @@
 Чтобы начать работу с матрицами, необходимо скачать файл Matrix.h и в `#include` указать полный или относительный путь до файла. Наприме, допустип есть папка *MyProject*, в ней содержится папка *Matrix*, тогда подключение матриц будет выглядеть так: `#include "Myproject\Matrix\Matrix.h"`.
 ### Создание объекта
 Для создание объекта, в классе объявлены и определенны несколько конструкторов:
-<details>
-<summary>Конструкторы</summary>
 
 ```cpp
 Matrix() // Конструктор по умолчанию
@@ -19,7 +17,6 @@ Matrix(const Matrix<T> &mat); // Конструктор копирования
 
 Matrix(const pair<int, int> size, const T value = T()); // size.first - строки, size.second - столбцы
 ```
-</details>
 
 <details>
 <summary><strong>Пример</strong></summary>
@@ -39,9 +36,39 @@ int main()
 
 ### Доступ к элементам
 Для доступа к элементам в класса Matrix перегружен оператор `()`:
-```
+
+```cpp
 T &operator()(int row, int column) //Перегрузка оператора ()
 ```
 С помощью данного оператора удобно заполнять и выводить матрицы:
+<details>
+<summary>Приме заполнения и вывода патрицы</summary>
 
-
+```cpp
+#include <iostream>
+#include "Matrix.h"
+using namespace std;
+int main()
+{
+    int rows = 3;
+    int columns = 3;
+    Matrix<int> mat1(rows, columns);
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            cin >> mat1(i, j);
+        }
+    }
+    cout << "Матрица mat1:" << endl;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            cout << mat1(i, j) << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+```
