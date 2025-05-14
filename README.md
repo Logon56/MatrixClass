@@ -44,7 +44,7 @@ T &operator()(int row, int column) //Перегрузка оператора ()
 ```
 С помощью данного оператора удобно заполнять и выводить матрицы.
 <details>
-<summary>Приме заполнения и вывода патрицы</summary>
+<summary><strong>Приме заполнения и вывода патрицы</strong></summary>
 
 ```cpp
 #include <iostream>
@@ -76,17 +76,17 @@ int main()
 ```
 
 <details>
-<summary>Входные данные</summary>
+<summary><b>Входные данные</b></summary>
     
 `1 2 3 4 5 6 7 8 9`
 
 </details>
 
 <details>
-<summary>Вывод матрицы</summary>
-
-Матрица mat1:<br>
+<summary><b>Вывод матрицы</b></summary>
+    
 ```
+Матрица mat1:<br>
 1 2 3<br>
 4 5 6<br>
 7 8 9
@@ -104,21 +104,21 @@ pair<int, int> size();
 Он возвращает структуру `pair`, у которой `first` - количество строк, `second` - количество столбцов.
 
 <details>
-<summary>Пример работы <code>size()</code></summary>
+<summary><strong>Пример работы <code>size()</code></strong></summary>
 
 ```
 #include <iostream>
 #include "Matrix.h"
 int main()
 {
-Matrix<double> mat1(3, 3);
-pair<int, int> size = mat1.size();
-cout << "Количество строк в mat1 - " << size.first << ". Количество столбцов в mat1 - " << size.second << endl;
-return 0;
+    Matrix<double> mat1(3, 3);
+    pair<int, int> size = mat1.size();
+    cout << "Количество строк в mat1 - " << size.first << ". Количество столбцов в mat1 - " << size.second << endl;
+    return 0;
 }
 ```
 <details>
-<summary><strong>Вывод в консоль</strong></summary>
+<summary><b>Вывод в консоль</b></summary>
 
 `Количество строк в mat1 - 3. Количество столбцов в mat1 - 3`
 </details>
