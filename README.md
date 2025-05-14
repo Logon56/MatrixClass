@@ -44,7 +44,7 @@ T &operator()(int row, int column) //Перегрузка оператора ()
 ```
 С помощью данного оператора удобно заполнять и выводить матрицы.
 <details>
-<summary><strong>Приме заполнения и вывода патрицы</strong></summary>
+<summary><strong>Приме заполнения и вывода матрицы</strong></summary>
 
 ```cpp
 #include <iostream>
@@ -83,12 +83,12 @@ int main()
 </details>
 
 <details>
-<summary><b>Вывод матрицы</b></summary>
+<summary><b>Выходные данные</b></summary>
     
 ```
-Матрица mat1:<br>
-1 2 3<br>
-4 5 6<br>
+Матрица mat1:
+1 2 3
+4 5 6
 7 8 9
 ```
 </details>
@@ -106,7 +106,7 @@ pair<int, int> size();
 <details>
 <summary><strong>Пример работы <code>size()</code></strong></summary>
 
-```
+```cpp
 #include <iostream>
 #include "Matrix.h"
 int main()
