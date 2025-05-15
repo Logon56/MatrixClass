@@ -433,9 +433,68 @@ int main()
 </details>
 
 ### В завершении
-На этом все, ниже указаны отальные методы реализованные в Matrix и примеры работы с ними.
+На этом все, ниже указаны методы реализованные в Matrix (и те, которые были рассмотренны выше) и примеры работы с ними.
 ***Спасибо за внимание и следите за обновлениями!***
 
 <details>
-<a id="PublicMetods"></a><summary><h2>Публичные методы</h2></summary>
+<a id="PublicMetods"><summary><h2>Публичные методы</h2></summary></a>
+    
+| Методы | Описание |
+|:------:|:---------|
+|[addColumns](#addColumns)|Добавляет справо указаное количество столбцов|
+|addRows| Добавляет снизу указаное количество строк|
+|clear|Очищает объект класса|
+|fill|Заполняет матрицу указанным значением|
+|removeColumns|Удаляет справо указаное количество столбцов|
+|removeRows|Удаляет снизу указаное количество строк|
+|setSize|Устанавливает новые размеры матрицы|
+|size|Возвращает структуру `pair`, где `firs` - количество строк,<br>`second` - количество столбцов|
+<details>
+<summary><a id="addColumns"><h3><code>addColumns</code></h3></a></summary>
+
+```h
+void addColumns(int columns); // Добавляет новые столбцы справо
+```
+**Пример**
+```cpp
+#include <iostream>
+#include "Matrix.h"
+using namespace std;
+int main()
+{
+    Matrix<int> mat1(3, 4, 5);
+    cout << "mat1 до добавление столбцов" << endl;
+    for (int i = 0; i < mat1.size().first; i++)
+    {
+        for (int j = 0; j < mat1.size().second; j++)
+        {
+            cout << mat1(i, j) << " ";
+        }
+        cout << endl;
+    }
+    mat1.addColumns(3); // Добавляем 3 столбца
+    cout << "mat1 после добавление 3 столбцов" << endl;
+    for (int i = 0; i < mat1.size().first; i++)
+    {
+        for (int j = 0; j < mat1.size().second; j++)
+        {
+            cout << mat1(i, j) << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+```
+**Вывод в консль**
+```cpp
+mat1 до добавление столбцов
+5 5 5 5
+5 5 5 5
+5 5 5 5
+mat1 после добавление 3 столбцов
+5 5 5 5 0 0 0
+5 5 5 5 0 0 0
+5 5 5 5 0 0 0
+```
+</details>
 </details>
