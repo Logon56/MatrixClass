@@ -17,7 +17,7 @@ public:
     Matrix(const pair<int, int> size, const T value = T());
     ~Matrix() { delete[] matrix; }
     pair<int, int> size() const { return MatSize; }
-    T &operator()(int row, int columns) const { return matrix[MatSize.second * row + columns]; }
+    T &operator()(int row, int column) const { return matrix[MatSize.second * row + column]; }
     Matrix<T> &operator=(const Matrix<T> &mat);
     Matrix<T> &operator+=(const Matrix<T> &mat);
     Matrix<T> &operator-=(const Matrix<T> &mat);
